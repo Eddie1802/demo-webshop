@@ -1,8 +1,20 @@
 const PRODUCTS = {
-  apple: { name: "Apple", emoji: "🍏" },
-  banana: { name: "Banana", emoji: "🍌" },
-  lemon: { name: "Lemon", emoji: "🍋" },
+  apple: { name: "Apple", emoji: "🍏", translationKey: "product.apple.name" },
+  banana: { name: "Banana", emoji: "🍌", translationKey: "product.banana.name" },
+  lemon: { name: "Lemon", emoji: "🍋", translationKey: "product.lemon.name" },
 };
+
+// Get translated product name
+function getProductName(product) {
+  const item = PRODUCTS[product];
+  if (!item) return product;
+
+  // Use translation function if available, otherwise fallback to English name
+  if (typeof t === "function" && item.translationKey) {
+    return t(item.translationKey);
+  }
+  return item.name;
+}
 
 function getBasket() {
   try {
@@ -33,7 +45,9 @@ function renderBasket() {
   if (!basketList) return;
   basketList.innerHTML = "";
   if (basket.length === 0) {
-    basketList.innerHTML = "<li>No products in basket.</li>";
+    // Use translation function if available, otherwise fallback to English
+    const emptyMessage = typeof t === "function" ? t("basket.empty") : "No products in basket.";
+    basketList.innerHTML = `<li>${emptyMessage}</li>`;
     if (cartButtonsRow) cartButtonsRow.style.display = "none";
     return;
   }
@@ -41,7 +55,8 @@ function renderBasket() {
     const item = PRODUCTS[product];
     if (item) {
       const li = document.createElement("li");
-      li.innerHTML = `<span class='basket-emoji'>${item.emoji}</span> <span>${item.name}</span>`;
+      const productName = getProductName(product);
+      li.innerHTML = `<span class='basket-emoji'>${item.emoji}</span> <span>${productName}</span>`;
       basketList.appendChild(li);
     }
   });

@@ -6,29 +6,17 @@
     <title>Fresh Apple - Fruit Shop</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body data-i18n-title="page.apple.title">
     <header role="banner">
       <div class="header-center">
         <a href="index.html" class="logo" aria-label="Go to homepage">
-          <img
-            src="img/fruit-shop-logo.png"
-            class="logo-img"
-            alt="Fruit Shop Logo"
-          />
-          <span class="products-text"> View Products </span>
+          <img src="img/fruit-shop-logo.png" class="logo-img" alt="Fruit Shop Logo" />
+          <span class="products-text" data-i18n="nav.view.products"> View Products </span>
         </a>
         <nav role="navigation" aria-label="Main navigation">
-          <a
-            href="basket.html"
-            class="basket-link"
-            aria-label="View shopping basket"
-          >
-            <img
-              src="img/basket-icon.png"
-              class="basket-img"
-              alt="Shopping basket icon"
-            />
-            <span class="basket-text">View shopping basket</span>
+          <a href="basket.html" class="basket-link" aria-label="View shopping basket">
+            <img src="img/basket-icon.png" class="basket-img" alt="Shopping basket icon" />
+            <span class="basket-text" data-i18n="nav.view.basket">View shopping basket</span>
           </a>
         </nav>
       </div>
@@ -36,8 +24,8 @@
     <main id="main-content" role="main">
       <div class="content-box">
         <div class="emoji-display" role="img" aria-label="Apple emoji">🍏</div>
-        <h1>Apple</h1>
-        <div class="product-desc" aria-label="Product description">
+        <h1 data-i18n="product.apple.name">Apple</h1>
+        <div class="product-desc" aria-label="Product description" data-i18n="product.apple.description">
           Keeps the doctor away (unless you throw it at them).
         </div>
         <div class="button-container">
@@ -45,6 +33,7 @@
             id="addToBasket"
             class="cart-action-btn"
             aria-label="Add Apple to basket"
+            data-i18n="button.add.to.basket"
           >
             Add to Basket
           </button>
@@ -52,14 +41,11 @@
       </div>
     </main>
     <footer>
-      <a
-        href="https://www.linkedin.com/in/timlolkema/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="https://www.linkedin.com/in/timlolkema/" target="_blank" rel="noopener noreferrer" data-i18n="footer.by">
         By Tim Lolkema
       </a>
     </footer>
+    <script src="translations.js"></script>
     <script src="shop.js"></script>
     <script>
       document.getElementById("addToBasket").onclick = function () {

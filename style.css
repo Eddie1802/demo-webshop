@@ -178,6 +178,43 @@ input[type="text"]:focus {
   gap: 2.5rem;
   width: 100%;
 }
+
+.language-selector-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.language-selector-container label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #222;
+  margin: 0;
+}
+
+.language-selector-container select {
+  padding: 0.5rem 0.8rem;
+  border: 2px solid #cfd8e3;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Baloo 2", Arial, sans-serif;
+  background: #f9fbfd;
+  color: #222;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  min-width: 120px;
+}
+
+.language-selector-container select:focus {
+  border-color: #0077ff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 119, 255, 0.1);
+}
+
+.language-selector-container select:hover {
+  border-color: #0077ff;
+}
 .product-li-link {
   display: block;
   width: 100%;

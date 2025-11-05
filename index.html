@@ -6,74 +6,51 @@
     <title>Welcome to Fruit Shop - Fresh Fruits Online</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body data-i18n-title="page.home.title">
     <header role="banner">
       <div class="header-center">
         <a href="index.html" class="logo" aria-label="Go to homepage">
-          <img
-            src="img/fruit-shop-logo.png"
-            class="logo-img"
-            alt="Fruit Shop Logo"
-          />
-          <span class="products-text"> View Products </span>
+          <img src="img/fruit-shop-logo.png" class="logo-img" alt="Fruit Shop Logo" />
+          <span class="products-text" data-i18n="nav.view.products"> View Products </span>
         </a>
+        <div class="language-selector-container">
+          <label for="languageSelector" data-i18n="language.selector.label">Language:</label>
+          <select id="languageSelector">
+            <option value="en" data-i18n="language.english">English</option>
+            <option value="ja" data-i18n="language.japanese">日本語</option>
+          </select>
+        </div>
         <nav role="navigation" aria-label="Main navigation">
-          <a
-            href="basket.html"
-            class="basket-link"
-            aria-label="View shopping basket"
-          >
-            <img
-              src="img/basket-icon.png"
-              class="basket-img"
-              alt="Shopping basket icon"
-            />
-            <span class="basket-text">View shopping basket</span>
+          <a href="basket.html" class="basket-link" aria-label="View shopping basket">
+            <img src="img/basket-icon.png" class="basket-img" alt="Shopping basket icon" />
+            <span class="basket-text" data-i18n="nav.view.basket">View shopping basket</span>
           </a>
         </nav>
       </div>
     </header>
     <main id="main-content" role="main">
-      <h1 class="products-title">Products</h1>
+      <h1 class="products-title" data-i18n="main.products.title">Products</h1>
       <ul class="emoji-list" role="list" aria-label="Product list">
         <li>
-          <a
-            href="product-apple.html"
-            class="emoji-box"
-            aria-label="View Apple product details"
-            >🍏</a
-          >
-          <a href="product-apple.html">Go to Apple</a>
+          <a href="product-apple.html" class="emoji-box" aria-label="View Apple product details">🍏</a>
+          <a href="product-apple.html" data-i18n="product.apple.link">Go to Apple</a>
         </li>
         <li>
-          <a
-            href="product-banana.html"
-            class="emoji-box"
-            aria-label="View Banana product details"
-            >🍌</a
-          >
-          <a href="product-banana.html">Go to Banana</a>
+          <a href="product-banana.html" class="emoji-box" aria-label="View Banana product details">🍌</a>
+          <a href="product-banana.html" data-i18n="product.banana.link">Go to Banana</a>
         </li>
         <li>
-          <a
-            href="product-lemon.html"
-            class="emoji-box"
-            aria-label="View Lemon product details"
-            >🍋</a
-          >
-          <a href="product-lemon.html">Go to Lemon</a>
+          <a href="product-lemon.html" class="emoji-box" aria-label="View Lemon product details">🍋</a>
+          <a href="product-lemon.html" data-i18n="product.lemon.link">Go to Lemon</a>
         </li>
       </ul>
     </main>
     <footer>
-      <a
-        href="https://www.linkedin.com/in/timlolkema/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a href="https://www.linkedin.com/in/timlolkema/" target="_blank" rel="noopener noreferrer" data-i18n="footer.by">
         By Tim Lolkema
       </a>
     </footer>
+    <script src="translations.js"></script>
     <script src="shop.js"></script>
   </body>
 </html>
